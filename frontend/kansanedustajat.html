@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kansanedustajat</title>
+  <link rel="stylesheet" href="css/tyyli.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-left">
+      <span class="site-title">Tietojärjestelmäprojekti</span>
+    </div>
+    <nav class="navbar-right">
+      <a href="index.html">Etusivu</a>
+      <a href="kansanedustajat.html" class="active">Kansanedustajat</a>
+      <a href="puolueet.html">Puolueet</a>
+      <a href="hallitus.html">Hallitus</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <h1>Kansanedustajat</h1>
+
+    <section class="filters">
+      <div class="filter-left">
+        <label for="party-select">Puolue:</label>
+        <select id="party-select">
+          <option value="kaikki">Kaikki</option>
+          <option value="sdp">SDP</option>
+          <option value="kok">Kokoomus</option>
+          <option value="kesk">Keskusta</option>
+          <option value="vihr">Vihreät</option>
+          <!-- lisää tarvittaessa -->
+        </select>
+      </div>
+
+      <div class="filter-right">
+        <button id="sort-asc">A–Ö</button>
+        <button id="sort-desc">Ö–A</button>
+      </div>
+    </section>
+
+    <section class="card-grid" id="mp-list">
+      <!-- Placeholder-kortit, oikea data voi tulla myöhemmin JS:llä -->
+      <article class="card">
+        <div class="avatar">Kuva</div>
+        <h2>Etunimi Sukunimi</h2>
+        <p>Puolue: Esimerkkipuolue</p>
+        <p>Vaalipiiri: Esimerkkipiiri</p>
+      </article>
+
+      <article class="card">
+        <div class="avatar">Kuva</div>
+        <h2>Toinen Edustaja</h2>
+        <p>Puolue: Esimerkkipuolue</p>
+        <p>Vaalipiiri: Esimerkkipiiri</p>
+      </article>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

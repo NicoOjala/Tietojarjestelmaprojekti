@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hallitus</title>
+  <link rel="stylesheet" href="css/tyyli.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-left">
+      <span class="site-title">Tietojärjestelmäprojekti</span>
+    </div>
+    <nav class="navbar-right">
+      <a href="index.html">Etusivu</a>
+      <a href="kansanedustajat.html">Kansanedustajat</a>
+      <a href="puolueet.html">Puolueet</a>
+      <a href="hallitus.html" class="active">Hallitus</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <h1>Hallitus</h1>
+
+    <section class="filters">
+      <div class="filter-left">
+        <label for="government-select">Hallituskokoonpano:</label>
+        <select id="government-select">
+          <option value="nykyinen">Nykyinen hallitus</option>
+          <option value="esimerkki">Esimerkkihallitus</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="card-grid" id="government-members">
+      <article class="card">
+        <div class="avatar">Kuva</div>
+        <h2>Etunimi Sukunimi</h2>
+        <p>Tehtävä: Pääministeri</p>
+        <p>Puolue: Esimerkkipuolue</p>
+      </article>
+      <article class="card">
+        <div class="avatar">Kuva</div>
+        <h2>Toinen Ministeri</h2>
+        <p>Tehtävä: Ministeri</p>
+        <p>Puolue: Esimerkkipuolue</p>
+      </article>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+/* Perusfontti ja marginit pois */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Navigaatio */
+.navbar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
+}
+
+.site-title {
+  font-weight: 600;
+}
+
+.navbar-right a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #333;
+}
+
+.navbar-right a:hover {
+  text-decoration: underline;
+}
+
+.navbar-right .active {
+  font-weight: 600;
+}
+
+/* Sivun runko */
+.content {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem 3rem;
+}
+
+/* Etusivun hero */
+.hero-image {
+  width: 100%;
+  height: 220px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+}
+
+.intro-text {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1.05rem;
+}
+
+.info-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.box {
+  flex: 1 1 250px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #fafafa;
+}
+
+.box-large {
+  flex: 2 1 350px;
+}
+
+.official-link {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* Filtterit ja kortit */
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-left,
+.filter-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+.avatar {
+  width: 100%;
+  height: 120px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+}

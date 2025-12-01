@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Puolueet</title>
+  <link rel="stylesheet" href="css/tyyli.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-left">
+      <span class="site-title">Tietojärjestelmäprojekti</span>
+    </div>
+    <nav class="navbar-right">
+      <a href="index.html">Etusivu</a>
+      <a href="kansanedustajat.html">Kansanedustajat</a>
+      <a href="puolueet.html" class="active">Puolueet</a>
+      <a href="hallitus.html">Hallitus</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <h1>Puolueet</h1>
+
+    <section class="filters">
+      <div class="filter-left">
+        <label for="ideology-select">Rajaa puolueita:</label>
+        <select id="ideology-select">
+          <option value="kaikki">Kaikki</option>
+          <option value="hallitus">Hallituspuolueet</option>
+          <option value="oppositio">Oppositiopuolueet</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="card-grid" id="party-list">
+      <article class="card">
+        <h2>Esimerkkipuolue 1</h2>
+        <p>Lyhyt kuvaus puolueesta.</p>
+      </article>
+
+      <article class="card">
+        <h2>Esimerkkipuolue 2</h2>
+        <p>Lyhyt kuvaus puolueesta.</p>
+      </article>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
