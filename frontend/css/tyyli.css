@@ -1,10 +1,10 @@
-/* Perusfontti ja marginit pois */
+
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-/* Navigaatio */
+
 .navbar {
   position: sticky;
   top: 0;
@@ -35,14 +35,14 @@ body {
   font-weight: 600;
 }
 
-/* Sivun runko */
+
 .content {
   max-width: 1000px;
   margin: 2rem auto;
   padding: 0 1rem 3rem;
 }
 
-/* Etusivun hero */
+
 .hero-image {
   width: 100%;
   height: 220px;
@@ -84,7 +84,6 @@ body {
   text-align: center;
 }
 
-/* Filtterit ja kortit */
 .filters {
   display: flex;
   justify-content: space-between;
