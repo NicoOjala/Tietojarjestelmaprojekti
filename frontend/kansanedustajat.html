@@ -41,6 +41,7 @@
     </section>
 
     <section class="card-grid" id="mp-list">
+
       <!-- Placeholder-kortit, oikea data voi tulla myöhemmin JS:llä -->
       <article class="card">
         <div class="avatar">Kuva</div>
@@ -58,6 +59,66 @@
     </section>
   </main>
 
-  <script src="js/main.js"></script>
+  <script>
+   const mpList = document.getElementById('mp-list');
+const partySelect = document.getElementById('party-select');
+const sortAscBtn = document.getElementById('sort-asc');
+const sortDescBtn = document.getElementById('sort-desc');
+
+let kansanedustajat = [];
+
+
+
+// Hae data backendistä
+fetch('http://127.0.0.1:3000/kansanedustajat')
+  .then(res => res.json())
+  .then(data => {
+
+    kansanedustajat = data;
+    renderKortit(kansanedustajat);
+  })
+  .catch(err=>alert('Fetch error:', err));
+
+// Luo kortit dynaamisesti
+function renderKortit(data) {
+  mpList.innerHTML = '';
+  data.forEach(mp => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    const osoite='https://users.metropolia.fi/~peterh/edustajakuvat/'
+
+    const kuva = '<img src="'+osoite+mp.last+'-'+mp.first+'-web-'+mp.seatNumber+'.jpg">';
+
+    card.innerHTML = `
+      <div class="avatar">${kuva}</div> <!-- kuvat lisätään myöhemmin -->
+      <h2>${mp.first} ${mp.last}</h2>
+      <p>Puolue: ${mp.party}</p>
+      <p>Vaalipiiri: ${mp.seatNumber}</p>
+    `;
+    mpList.appendChild(card);
+  });
+}
+
+// Suodatus puolueen mukaan
+partySelect.addEventListener('change', () => {
+  const puolue = partySelect.value.toLowerCase();
+  const filtroidut = puolue === 'kaikki'
+    ? kansanedustajat
+    : kansanedustajat.filter(mp => mp.party.toLowerCase() === puolue);
+  renderKortit(filtroidut);
+});
+
+// Aakkosjärjestys
+sortAscBtn.addEventListener('click', () => {
+  const sorted = [...kansanedustajat].sort((a, b) => a.firstname.localeCompare(b.firstname));
+  renderKortit(sorted);
+});
+
+sortDescBtn.addEventListener('click', () => {
+  const sorted = [...kansanedustajat].sort((a, b) => b.firstname.localeCompare(a.firstname));
+  renderKortit(sorted);
+});
+ 
+  </script>
 </body>
 </html>
