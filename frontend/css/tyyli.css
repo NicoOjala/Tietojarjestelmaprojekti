@@ -124,3 +124,12 @@ body {
   justify-content: center;
   background-color: #eee;
 }
+
+.avatar img {
+
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+
+}
