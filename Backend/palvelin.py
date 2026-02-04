@@ -9,10 +9,6 @@ CORS(app)
 data=urllib.request.urlopen("https://users.metropolia.fi/~peterh/mps.json")
 kansanedustajat=json.load(data)
 
-@app.route('/ek-kuva')
-def ek_kuva():
-    return send_file("./ek-kuva.2.jpg", mimetype="image/jpeg")
-
 @app.route('/kansanedustajat')
 def hae_kansanedustajat():
     return jsonify(kansanedustajat)
