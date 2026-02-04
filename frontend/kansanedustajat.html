@@ -26,10 +26,11 @@
         <label for="party-select">Puolue:</label>
         <select id="party-select">
           <option value="kaikki">Kaikki</option>
-          <option value="sdp">SDP</option>
+          <option value="sd">SDP</option>
           <option value="kok">Kokoomus</option>
           <option value="kesk">Keskusta</option>
           <option value="vihr">Vihreät</option>
+          <option value="r">RKP</option>
           <!-- lisää tarvittaessa -->
         </select>
       </div>
@@ -110,12 +111,12 @@ partySelect.addEventListener('change', () => {
 
 // Aakkosjärjestys
 sortAscBtn.addEventListener('click', () => {
-  const sorted = [...kansanedustajat].sort((a, b) => a.firstname.localeCompare(b.firstname));
+  const sorted = [...kansanedustajat].sort((a, b) => a.first.localeCompare(b.first));
   renderKortit(sorted);
 });
 
 sortDescBtn.addEventListener('click', () => {
-  const sorted = [...kansanedustajat].sort((a, b) => b.firstname.localeCompare(a.firstname));
+  const sorted = [...kansanedustajat].sort((a, b) => b.first.localeCompare(a.first));
   renderKortit(sorted);
 });
  
