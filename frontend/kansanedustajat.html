@@ -86,9 +86,18 @@ function renderKortit(data) {
   data.forEach(mp => {
     const card = document.createElement('div');
     card.className = 'card';
-    const osoite='https://users.metropolia.fi/~peterh/edustajakuvat/'
+    const osoite='https://users.metropolia.fi/~peterh/edustajakuvat/';
 
-    const kuva = '<img src="'+osoite+mp.last+'-'+mp.first+'-web-'+mp.personNumber+'.jpg">';
+    const kuva = `
+      <img
+        src="${osoite}${mp.last}-${mp.first}-web-${mp.personNumber}.jpg"
+        onerror="this.onerror=null; this.src='default.png';"
+        alt="Kuva kansanedustajasta">
+      `;
+
+
+
+
 
     card.innerHTML = `
       <div class="avatar">${kuva}</div> <!-- kuvat lisätään myöhemmin -->
