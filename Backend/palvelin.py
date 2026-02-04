@@ -1,4 +1,6 @@
 from flask import Flask, request, send_file, jsonify, render_template
+from collections import Counter
+
 import urllib.request
 import json
 from flask_cors import CORS
@@ -16,6 +18,13 @@ def hae_kansanedustajat():
 @app.route('/kansanedustajat-sivu')
 def kansanedustajat_sivu():
     return render_template('kansanedustajat.html', kansanedustajat=kansanedustajat)
+
+@app.route('/puolueet')
+def hae_puolueet():
+    laskuri = Counter(mp.get("party", "").strip() for mp in kansanedustajat if mp.get("party"))
+    data = [{"party": p, "count": c} for p, c in laskuri.most_common()]
+    return jsonify(data)
+
 
 if __name__ == '__main__':
     app.run(debug=True, host='127.0.0.1', port=3000)

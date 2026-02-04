@@ -45,14 +45,25 @@ body {
 
 .hero-image {
   width: 100%;
-  height: 220px;
+  max-width: 800px;
+  height: 300px;
+  margin: 0 auto;
+  overflow: hidden;
   border-radius: 8px;
   border: 1px solid #ccc;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #eee;
 }
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 65%;
+  display: block;
+}
+
+
+
+
 
 .intro-text {
   text-align: center;
