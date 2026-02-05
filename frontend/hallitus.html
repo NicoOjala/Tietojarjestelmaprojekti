@@ -65,7 +65,13 @@ function renderKortit(data) {
     card.className = 'card';
     const osoite='https://users.metropolia.fi/~peterh/edustajakuvat/'
 
-    const kuva = '<img src="'+osoite+mp.last+'-'+mp.first+'-web-'+mp.personNumber+'.jpg">';
+    const kuva = `
+      <img
+        src="${osoite}${mp.last}-${mp.first}-web-${mp.personNumber}.jpg"
+        onerror="this.onerror=null; this.src='default.png';"
+        alt="Kuva">
+    `;
+
 
     card.innerHTML = `
       <div class="avatar">${kuva}</div> <!-- kuvat lisätään myöhemmin -->
@@ -78,7 +84,7 @@ function renderKortit(data) {
   });
 }
 
-// Suodatus puolueen mukaan
+
 partySelect.addEventListener('change', () => {
   const puolue = partySelect.value.toLowerCase();
   const filtroidut = puolue === 'kaikki'
@@ -96,7 +102,7 @@ sortAscBtn.addEventListener('click', () => {
 sortDescBtn.addEventListener('click', () => {
   const sorted = [...kansanedustajat].sort((a, b) => b.firstname.localeCompare(a.firstname));
   renderKortit(sorted);
-});
+}); 
 
   </script>
 </body>

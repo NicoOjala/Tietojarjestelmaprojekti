@@ -1,3 +1,4 @@
+let puolueet = [];
 console.log("Tietojärjestelmäprojektin frontti käynnissä");
 console.log("Puolueet backendistä:", puolueet.map(p => p.party));
 
@@ -19,7 +20,8 @@ const PARTY_DESCRIPTIONS = {
   liik: "Liike Nyt painottaa yksilönvapautta ja talousliberalismia."
 };
 
-let puolueet = [];
+/*
+*/
 
 function normalizeParty(p) {
   return (p || "").trim().toLowerCase();
