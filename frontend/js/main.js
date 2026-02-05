@@ -1,4 +1,6 @@
 console.log("Tietojärjestelmäprojektin frontti käynnissä");
+console.log("Puolueet backendistä:", puolueet.map(p => p.party));
+
 
 const partyList = document.getElementById("party-list");
 const ideologySelect = document.getElementById("ideology-select");
